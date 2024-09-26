@@ -3,12 +3,13 @@ import java.util.Arrays;
 
 
 public class ArrayStack<E> implements Stack<E> {
+    public static final int DEFAULT_SIZE = 10;
     private E[] stack;
     private int top;
     private int size;
 
     public ArrayStack() {
-        stack = (E[]) new Object[10];
+        stack = (E[]) new Object[DEFAULT_SIZE];
         top = -1;
         size = 0;
     }
@@ -41,5 +42,4 @@ public class ArrayStack<E> implements Stack<E> {
     private void resizeStack() {
         stack = Arrays.copyOf(stack, stack.length * 2);
     }
-
 }
